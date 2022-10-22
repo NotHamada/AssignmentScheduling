@@ -1,15 +1,13 @@
-using Microsoft.EntityFrameworkCore;
-using TrilhaApiDesafio.Models;
+using AssignmentScheduling.Models;
 
-namespace TrilhaApiDesafio.Context
+namespace AssignmentScheduling.Context;
+
+public class OrganizadorContext : DbContext
 {
-    public class OrganizadorContext : DbContext
+    public OrganizadorContext(DbContextOptions<OrganizadorContext> options) : base(options)
     {
-        public OrganizadorContext(DbContextOptions<OrganizadorContext> options) : base(options)
-        {
-            
-        }
-
-        public DbSet<Tarefa> Tarefas { get; set; }
+        
     }
+
+    public DbSet<Tarefa> Tarefas { get; set; }
 }
